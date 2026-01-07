@@ -9,6 +9,8 @@ import '../widgets/product_status_pie_chart.dart';
 class SellerDashboardScreen extends StatefulWidget {
   const SellerDashboardScreen({super.key});
 
+  static const String route ='/SellerDashboardScreen';
+
   @override
   State<SellerDashboardScreen> createState() => _SellerDashboardScreenState();
 }

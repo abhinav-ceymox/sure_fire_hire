@@ -2,7 +2,6 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sure_fire_hire/utilities/app_color.dart';
-
 import '../state/overview_provider.dart';
 import '../models/product_status_model.dart';
 

@@ -5,6 +5,8 @@ class TopProduct {
   final int quantity;
   final String status;
   final String image;
+  final String? sku;
+  final String? type;
 
   TopProduct({
     required this.name,
@@ -13,5 +15,7 @@ class TopProduct {
     required this.quantity,
     required this.status,
     required this.image,
+    this.sku,
+    this.type
   });
 }

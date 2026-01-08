@@ -2,8 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sure_fire_hire/views/onboard_Screen.dart';
- 
+ import 'package:sure_fire_hire/views/product_manage.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
   static const String route = 'SplashScreen';
@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds:1), () {
-      context.pushNamed(OnboardScreen.route);
+      context.pushNamed(ProductManageScreen.route);
     });
   }
 

@@ -42,8 +42,66 @@ class DashboardProvider extends ChangeNotifier {
       status: "In stock",
       image: 'assets/images/b62f945894293d3fd31eb810f7fa3bd36ac1c57c.png',
     ),
+    TopProduct(
+      name: "Professional Drill",
+      productId: "#20478ERD",
+      price: 105.50,
+      quantity: 20,
+      status: "In stock",
+      image: 'assets/images/b62f945894293d3fd31eb810f7fa3bd36ac1c57c.png',
+    ),
+    TopProduct(
+      name: "Professional Drill",
+      productId: "#20478ERD",
+      price: 105.50,
+      quantity: 20,
+      status: "In stock",
+      image: 'assets/images/b62f945894293d3fd31eb810f7fa3bd36ac1c57c.png',
+    ),
+
+    TopProduct(
+      name: "Professional Drill",
+      productId: "#20478ERD",
+      price: 105.50,
+      quantity: 20,
+      status: "In stock",
+      image: 'assets/images/b62f945894293d3fd31eb810f7fa3bd36ac1c57c.png',
+      sku:'8098765',
+      type: 'sales'
+    ),
+    TopProduct(
+        name: "Professional Drill",
+        productId: "#20478ERD",
+        price: 105.50,
+        quantity: 20,
+        status: "In stock",
+        image: 'assets/images/b62f945894293d3fd31eb810f7fa3bd36ac1c57c.png',
+        sku:'8098765',
+        type: 'sales'
+    ),
+    TopProduct(
+        name: "Professional Drill",
+        productId: "#20478ERD",
+        price: 105.50,
+        quantity: 20,
+        status: "In stock",
+        image: 'assets/images/b62f945894293d3fd31eb810f7fa3bd36ac1c57c.png',
+        sku:'8098765',
+        type: 'sales'
+    ),
+
+
+
   ];
 
   List<TopProduct> get topProducts => _topProducts;
+
+  List<TopProduct> get dashboardProducts =>
+      _topProducts.where((p) => p.sku == null && p.type == null).toList();
+
+   List<TopProduct> get manageProducts =>
+      _topProducts.where((p) => p.sku != null && p.type != null).toList();
+
+
 
 }

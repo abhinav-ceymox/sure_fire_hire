@@ -4,8 +4,7 @@ import 'package:sure_fire_hire/service/route_service.dart';
 import 'package:sure_fire_hire/state/dashboard_provider.dart';
 import 'package:sure_fire_hire/state/overview_provider.dart';
 import 'package:sure_fire_hire/state/seller_provider.dart';
-import 'package:sure_fire_hire/views/home.dart';
-import 'package:sure_fire_hire/views/onboard_Screen.dart';
+
 
 
 void main() {

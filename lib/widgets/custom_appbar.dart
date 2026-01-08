@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:sure_fire_hire/state/seller_provider.dart';
-
 import '../utilities/app_color.dart';
 
 class CustomCurvedAppBar extends StatelessWidget
@@ -13,7 +12,6 @@ class CustomCurvedAppBar extends StatelessWidget
   Widget build(BuildContext context) {
     final provider=context.watch<SellerProvider>();
     final data=provider.seller;
-
     return PreferredSize(
       preferredSize: const Size.fromHeight(200),
       child: Container(

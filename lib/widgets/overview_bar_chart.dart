@@ -1,9 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../models/chart_model.dart';
-
 import '../state/overview_provider.dart';
 import '../utilities/chart_colors.dart';
 

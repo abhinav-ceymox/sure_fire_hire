@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sure_fire_hire/utilities/app_color.dart';
 import 'package:sure_fire_hire/widgets/dashboard_stats_grid.dart';
 import 'package:sure_fire_hire/widgets/product_card.dart';
-import '../widgets/app_bar.dart';
+import '../state/dashboard_provider.dart';
+import '../widgets/custom_appbar.dart';
 import '../widgets/overview_bar_chart.dart';
 import '../widgets/product_status_pie_chart.dart';
 
@@ -43,7 +45,16 @@ class _SellerDashboardScreenState extends State<SellerDashboardScreen> {
                 ),
               ),
             ),
-            ProductCard(),
+
+            Consumer<DashboardProvider>(
+              builder: (BuildContext context, provider, Widget? child) {
+                return  ProductCard(
+                   products: provider.dashboardProducts,
+                  direction: Axis.horizontal,
+                );
+              },
+            ),
+            const SizedBox(height: 20,),
           ],
         ),
       ),

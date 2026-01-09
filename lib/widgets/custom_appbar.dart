@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:sure_fire_hire/state/seller_provider.dart';
+import 'package:sure_fire_hire/utilities/text_style.dart';
 import '../utilities/app_color.dart';
 
 class CustomCurvedAppBar extends StatelessWidget
@@ -15,12 +16,8 @@ class CustomCurvedAppBar extends StatelessWidget
     return PreferredSize(
       preferredSize: const Size.fromHeight(200),
       child: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-            colors: [AppColor.primary, AppColor.secondary],
-          ),
+        decoration:  BoxDecoration(
+          gradient:AppColor.AppbarGradient,
         ),
         child: Stack(
           children: [
@@ -72,23 +69,16 @@ class CustomCurvedAppBar extends StatelessWidget
                                 width: 50,
                               ),
                             ),
-                            const Column(
+                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
                                   'SurefireHire',
-                                  style: TextStyle(
-                                    color: AppColor.bgcolor,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: AppStyle.semiBold(fontSize: 20, color: AppColor.bgcolor),
                                 ),
                                 Text(
                                   'Equipment Rentals',
-                                  style: TextStyle(
-                                    color: AppColor.bgcolor,
-                                    fontSize: 10,
-                                  ),
+                                  style: AppStyle.semiBold(fontSize: 10, color: AppColor.bgcolor)
                                 ),
                               ],
                             ),
@@ -117,22 +107,13 @@ class CustomCurvedAppBar extends StatelessWidget
 
                     // User greeting
                     Text( 'Hi, ${data.name}',
-                      style: const TextStyle(
-                        color: AppColor.bgcolor,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: AppStyle.bold(fontSize: 24, color: AppColor.bgcolor)
                     ),
 
                     const SizedBox(height: 4),
-
                     Text(
                       data.role,
-                      style: const TextStyle(
-                        color: AppColor.bgcolor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: AppStyle.semiBold(fontSize: 16, color: AppColor.bgcolor)
                     ),
                   ],
                 ),

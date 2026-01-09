@@ -2,6 +2,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sure_fire_hire/utilities/app_color.dart';
+import 'package:sure_fire_hire/utilities/text_style.dart';
 import '../state/overview_provider.dart';
 import '../models/product_status_model.dart';
 
@@ -29,9 +30,9 @@ class _ProductStatusPieChartState extends State<ProductStatusPieChart> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+           Text(
             'Product Status',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+            style:AppStyle.bold(fontSize: 18, color: AppColor.textcolor) ,
           ),
           const SizedBox(height: 16),
 
@@ -82,11 +83,7 @@ class _ProductStatusPieChartState extends State<ProductStatusPieChart> {
         radius: isTouched ? 50 : 40,
 
          title: isTouched ? '${item.count}' : '',
-        titleStyle: const TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w900,
-          color: Colors.white,
-        ),
+        titleStyle: AppStyle.bold(fontSize: 26, color: AppColor.bgcolor)
       );
     });
   }
@@ -109,10 +106,7 @@ class _ProductStatusPieChartState extends State<ProductStatusPieChart> {
             const SizedBox(width: 8),
             Text(
               item.label,
-              style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-              ),
+              style: AppStyle.semiBold(fontSize: 14, color: AppColor.textcolor)
             ),
           ],
         );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sure_fire_hire/utilities/app_color.dart';
 
 class Button extends StatelessWidget {
   final VoidCallback onPressed;
@@ -39,8 +40,8 @@ class Button extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: const TextStyle(
-            color: Colors.white,
+          style: TextStyle(
+            color:AppColor.bgcolor,
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),

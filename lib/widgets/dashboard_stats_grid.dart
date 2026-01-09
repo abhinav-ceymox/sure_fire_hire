@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:sure_fire_hire/utilities/app_color.dart';
+import 'package:sure_fire_hire/utilities/text_style.dart';
  import '../state/dashboard_provider.dart';
 
 class DashboardStatsGrid  extends StatelessWidget {
@@ -27,10 +28,7 @@ class DashboardStatsGrid  extends StatelessWidget {
             padding: EdgeInsets.all(14),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              gradient: const LinearGradient(colors: [
-                Color(0xFFFDEEE2),
-                Color(0xFFBFE5F3),
-              ]),
+              gradient: AppColor.DashboardGradient,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,14 +45,11 @@ class DashboardStatsGrid  extends StatelessWidget {
                 const SizedBox(height: 15,),
                 Text(
                   ('${stat.value}'),
-                  style: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w400,
-                    color: AppColor.secondary,
-                  ),
+                  style:AppStyle.regular(fontSize: 24, color: AppColor.secondary)
                 ),
                  const SizedBox(height: 5,),
-                 Text(stat.title,style:TextStyle(color: AppColor.fadetextcolor,fontSize: 14,fontWeight:FontWeight.bold),),
+                 Text(stat.title,
+                     style:AppStyle.semiBold(fontSize: 14, color: AppColor.fadetextcolor)),
               ],
 
             ),

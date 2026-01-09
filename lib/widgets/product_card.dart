@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
  import 'package:sure_fire_hire/models/top_product_model.dart';
 import 'package:sure_fire_hire/utilities/app_color.dart';
+import 'package:sure_fire_hire/utilities/text_style.dart';
 
 class ProductCard extends StatelessWidget {
   final bool showActions;
@@ -38,16 +39,8 @@ class ProductCard extends StatelessWidget {
                 width:340,
                 margin: const EdgeInsets.all(26),
                  decoration: BoxDecoration(
-                  gradient: useGradient
-                      ? LinearGradient(
-                    colors: [
-                      AppColor.cardbg,
-                      AppColor.bgcolor,
-                    ],
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                  )
-                      : null,
+                   gradient: useGradient ? AppColor.ProductCardGradient : null,
+
                   color: useGradient ? null : AppColor.bgcolor,
                   borderRadius: BorderRadius.circular(30),
                   border: Border.all(color: AppColor.boder),
@@ -80,11 +73,7 @@ class ProductCard extends StatelessWidget {
                                   const SizedBox(height: 10),
                                   Text(
                                     data.name,
-                                    style: TextStyle(
-                                      color: AppColor.textcolor,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500,
-                                    ),
+                                    style: AppStyle.semiBold(fontSize: 18, color: AppColor.textcolor),
                                   ),
                                 ],
                               ),
@@ -135,7 +124,7 @@ class ProductCard extends StatelessWidget {
                          decoration: BoxDecoration(
                            border: Border(
                              top: BorderSide(
-                               color: Color(0xffD9D9D9),
+                               color:AppColor.cardboder,
                                width: 2,
                              )
                            )
@@ -147,7 +136,7 @@ class ProductCard extends StatelessWidget {
                               decoration: BoxDecoration(
                                   border: Border(
                                       right: BorderSide(
-                                        color: Color(0xffD9D9D9),
+                                        color: AppColor.cardboder,
                                         width: 2,
                                       )
                                   )
@@ -218,11 +207,7 @@ class InfoRow extends StatelessWidget {
             ),
             Text(
               leftValue,
-              style: TextStyle(
-                color: AppColor.textcolor,
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-              ),
+              style: AppStyle.semiBold(fontSize: 18, color: AppColor.textcolor),
             ),
           ],
         ),
@@ -235,11 +220,7 @@ class InfoRow extends StatelessWidget {
             ),
             Text(
               rightValue,
-              style: TextStyle(
-                color: AppColor.textcolor,
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-              ),
+              style: AppStyle.semiBold(fontSize: 18, color: AppColor.textcolor),
             ),
           ],
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sure_fire_hire/utilities/app_color.dart';
+import 'package:sure_fire_hire/utilities/text_style.dart';
 import 'package:sure_fire_hire/widgets/dashboard_stats_grid.dart';
 import 'package:sure_fire_hire/widgets/product_card.dart';
 import '../state/dashboard_provider.dart';
@@ -23,39 +24,41 @@ class _SellerDashboardScreenState extends State<SellerDashboardScreen> {
     return Scaffold(
       backgroundColor: AppColor.bgcolor,
       appBar: const CustomCurvedAppBar(),
-      body: SingleChildScrollView(
+      body: Padding(
         padding: const EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            OverviewBarChart(),
-            const SizedBox(height: 20),
-            DashboardStatsGrid(),
-            const SizedBox(height: 20),
-            ProductStatusPieChart(),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.all(15),
-              child: Text(
-                "Top Selling products",
-                style: TextStyle(
-                  color: AppColor.textcolor,
-                  fontWeight: FontWeight.w800,
-                  fontSize: 18,
-                ),
-              ),
-            ),
+        child: CustomScrollView(
+           slivers: [
+             SliverToBoxAdapter(
+               child:  Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                 children: [
+                   OverviewBarChart(),
+                   const SizedBox(height: 20),
+                   DashboardStatsGrid(),
+                   const SizedBox(height: 20),
+                   ProductStatusPieChart(),
+                   const SizedBox(height: 20),
+                   Padding(
+                     padding: const EdgeInsets.all(15),
+                     child: Text(
+                         "Top Selling products",
+                         style:AppStyle.bold(fontSize: 18, color: AppColor.textcolor)
+                     ),
+                   ),
 
-            Consumer<DashboardProvider>(
-              builder: (BuildContext context, provider, Widget? child) {
-                return  ProductCard(
-                   products: provider.dashboardProducts,
-                  direction: Axis.horizontal,
-                );
-              },
-            ),
-            const SizedBox(height: 20,),
-          ],
+                   Consumer<DashboardProvider>(
+                     builder: (BuildContext context, provider, Widget? child) {
+                       return  ProductCard(
+                         products: provider.dashboardProducts,
+                         direction: Axis.horizontal,
+                       );
+                     },
+                   ),
+                   const SizedBox(height: 20,),
+                 ],
+               ),
+             )
+           ],
         ),
       ),
     );

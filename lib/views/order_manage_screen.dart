@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sure_fire_hire/state/order_provider.dart';
 import 'package:sure_fire_hire/utilities/app_color.dart';
+import 'package:sure_fire_hire/utilities/text_style.dart';
 import 'package:sure_fire_hire/widgets/manage_card.dart';
 import 'package:sure_fire_hire/widgets/normal_appbar.dart';
 
@@ -20,11 +21,7 @@ class _OrderManageScreenState extends State<OrderManageScreen> {
       appBar: NormalAppbar(),
       body: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFFF4E8DD), Color(0xFFE1DFDF)],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-          ),
+         gradient: AppColor.bgGradient,
         ),
         child: CustomScrollView(
           slivers: [
@@ -66,10 +63,7 @@ class _OrderManageScreenState extends State<OrderManageScreen> {
                                   const SizedBox(height: 6),
                                   Text(
                                     order.productId,
-                                    style:  TextStyle(
-                                      color: AppColor.secondary ,
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                                    style:  AppStyle.semiBold(fontSize: 16, color: AppColor.secondary)
                                   ),
 
                                   const SizedBox(height: 20),
@@ -84,10 +78,8 @@ class _OrderManageScreenState extends State<OrderManageScreen> {
                                   const SizedBox(height: 6),
                                   Text(
                                     order.billingName,
-                                    style: const TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w700,
-                                    ),
+                                      style:  AppStyle.semiBold(fontSize: 18, color: AppColor.textcolor)
+
                                   ),
 
                                   const SizedBox(height: 26),
@@ -139,10 +131,7 @@ class _OrderManageScreenState extends State<OrderManageScreen> {
                                   const SizedBox(height: 6),
                                   Text(
                                     '${order.purchasedOn}',
-                                    style: const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                                      style:  AppStyle.semiBold(fontSize: 16, color: AppColor.textcolor)
                                   ),
                                 ],
                               ),
@@ -166,14 +155,13 @@ Widget _info(String label, String value, {bool bold = false}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Text(label, style: TextStyle(color: AppColor.fadetextcolor)),
+      Text(label,
+          style: TextStyle(color: AppColor.fadetextcolor)
+      ),
       const SizedBox(height: 6),
       Text(
         value,
-        style: TextStyle(
-          fontSize: 16,
-          fontWeight: bold ? FontWeight.w700 : FontWeight.w600,
-        ),
+          style:  AppStyle.semiBold(fontSize: 16, color: AppColor.textcolor)
       ),
     ],
   );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sure_fire_hire/utilities/app_color.dart';
+import 'package:sure_fire_hire/utilities/text_style.dart';
 import 'package:sure_fire_hire/views/home.dart';
 
 import '../widgets/button.dart';
@@ -59,7 +60,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                         Colors.white.withOpacity(0.15),
                         Colors.white.withOpacity(0.15),
                         Colors.white.withOpacity(0.65),
-                        Colors.white, // bottom full white
+                        AppColor.bgcolor, // bottom full white
                       ],
                     ),
                   ),
@@ -73,56 +74,34 @@ class _OnboardScreenState extends State<OnboardScreen> {
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [Color(0xFFFAE1CE), Color(0xFFFAC59F)],
-                ),
+                gradient:AppColor.OnboardGradient,
               ),
               child: Column(
                 children: [
                   SizedBox(height: 30),
                   Text(
                     'Vendor',
-                    style: TextStyle(
-                      color: AppColor.secondary,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16,
-                    ),
+                    style:AppStyle.bold(fontSize: 16, color: AppColor.secondary)
                   ),
                   const SizedBox(height: 5),
                   Text(
                     'Turn your tools into profit',
-                    style: TextStyle(
-                      color: AppColor.textcolor,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w800,
-                    ),
+                    style:AppStyle.bold(fontSize: 24, color: AppColor.textcolor)
                   ),
                   Text(
                     'start selling today!',
-                    style: TextStyle(
-                      color: AppColor.textcolor,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w800,
-                    ),
+                      style:AppStyle.bold(fontSize: 24, color: AppColor.textcolor)
+
                   ),
                   const SizedBox(height: 20),
                   Text(
                     'Surefire Hire is the place for you, you can list your',
-                    style: TextStyle(
-                      color: AppColor.textcolor,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style:AppStyle.medium(fontSize: 14, color: AppColor.textcolor)
                   ),
                   Text(
                     'tools/equipment  and earn a passive income',
-                    style: TextStyle(
-                      color: AppColor.textcolor,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                    ),
+                      style:AppStyle.medium(fontSize: 14, color: AppColor.textcolor)
+
                   ),
                   const SizedBox(height: 25),
                   Button(

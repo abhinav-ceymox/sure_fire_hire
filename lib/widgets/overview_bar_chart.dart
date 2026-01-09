@@ -1,6 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sure_fire_hire/utilities/app_color.dart';
+import 'package:sure_fire_hire/utilities/text_style.dart';
 import '../models/chart_model.dart';
 import '../state/overview_provider.dart';
 import '../utilities/chart_colors.dart';
@@ -24,7 +26,7 @@ class OverviewBarChart extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColor.bgcolor,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
@@ -55,9 +57,9 @@ class OverviewBarChart extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text(
+         Text(
           'Overview',
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          style:AppStyle.bold(fontSize: 18, color: AppColor.textcolor) ,
         ),
         Row(
           children: [
@@ -81,8 +83,8 @@ class OverviewBarChart extends StatelessWidget {
             borderRadius: BorderRadius.circular(4),
           ),
         ),
-        const SizedBox(width: 6),
-        Text(text),
+         SizedBox(width: 6),
+        Text(text,style: AppStyle.semiBold(fontSize: 14, color: AppColor.textcolor),),
       ],
     );
   }
@@ -96,8 +98,8 @@ class OverviewBarChart extends StatelessWidget {
           final label = rodIndex == 0 ? 'Income' : 'Expense';
           return BarTooltipItem(
             '$label\n₹${_formatValue(rod.toY)}',
-            const TextStyle(
-              color: Colors.white,
+             TextStyle(
+              color:AppColor.bgcolor,
               fontSize: 14,
               fontWeight: FontWeight.w700,
             ),

@@ -35,9 +35,9 @@ class ProductCard extends StatelessWidget {
             itemBuilder: (context, index) {
               final data = products[index];
               return Container(
-                margin: const EdgeInsets.all(28),
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
+                width:340,
+                margin: const EdgeInsets.all(26),
+                 decoration: BoxDecoration(
                   gradient: useGradient
                       ? LinearGradient(
                     colors: [
@@ -55,70 +55,78 @@ class ProductCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        children: [
+                          /// ---------- HEADER ----------
+                          Row(
+                            children: [
+                              Image.asset(
+                                data.image,
+                                width: 60,
+                                height: 60,
+                              ),
+                              const SizedBox(width: 20),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Product name',
+                                    style: TextStyle(
+                                      color: AppColor.fadetextcolor,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Text(
+                                    data.name,
+                                    style: TextStyle(
+                                      color: AppColor.textcolor,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
 
-                    /// ---------- HEADER ----------
-                    Row(
-                      children: [
-                        Image.asset(
-                          data.image,
-                          width: 60,
-                          height: 60,
-                        ),
-                        const SizedBox(width: 20),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Product name',
-                              style: TextStyle(
-                                color: AppColor.fadetextcolor,
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            Text(
-                              data.name,
-                              style: TextStyle(
-                                color: AppColor.textcolor,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                              ),
+                          const SizedBox(height: 30),
+
+                          /// ---------- ROW 1 ----------
+                          InfoRow(
+                            leftLabel: 'Product id',
+                            leftValue: data.productId,
+                            rightLabel: 'Product price',
+                            rightValue: '${data.price}',
+                          ),
+
+                          const SizedBox(height: 25),
+
+                          /// ---------- ROW 2 ----------
+                          InfoRow(
+                            leftLabel: 'Product id',
+                            leftValue: data.productId,
+                            rightLabel: 'Product price',
+                            rightValue: '${data.price}',
+                          ),
+
+
+                          /// ---------- SKU + TYPE (OPTIONAL) ----------
+                          if (extradata && data.sku != null && data.type != null) ...[
+                            const SizedBox(height: 25),
+                            InfoRow(
+                              leftLabel: 'SKU',
+                              leftValue: data.sku!,
+                              rightLabel: 'Type',
+                              rightValue: data.type!,
                             ),
                           ],
-                        ),
-                      ],
-                    ),
-
-                    const SizedBox(height: 30),
-
-                    /// ---------- ROW 1 ----------
-                    InfoRow(
-                      leftLabel: 'Product id',
-                      leftValue: data.productId,
-                      rightLabel: 'Product price',
-                      rightValue: '${data.price}',
-                    ),
-
-                    const SizedBox(height: 25),
-
-                    /// ---------- ROW 2 ----------
-                    InfoRow(
-                      leftLabel: 'Product id',
-                      leftValue: data.productId,
-                      rightLabel: 'Product price',
-                      rightValue: '${data.price}',
-                    ),
-
-
-                    /// ---------- SKU + TYPE (OPTIONAL) ----------
-                    if (extradata && data.sku != null && data.type != null) ...[
-                      const SizedBox(height: 25),
-                      InfoRow(
-                        leftLabel: 'SKU',
-                        leftValue: data.sku!,
-                        rightLabel: 'Type',
-                        rightValue: data.type!,
+                        ],
                       ),
-                    ],
+                    ),
+
+
 
                     /// ---------- ACTIONS (OPTIONAL) ----------
                     if (showActions) ...[

@@ -17,39 +17,39 @@ class _ProductManageScreenState extends State<ProductManageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Normal_appbar(),
+      appBar: NormalAppbar(),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Color(0xFFF4E8DD), Color(0xFFE1DFDF)],
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                ),
-              ),
-              child: SafeArea(
-                child: Column(
-                  children: [
-                    const SizedBox(height: 20),
-                    ManageCard(),
-                    Consumer<DashboardProvider>(
-                      builder: (BuildContext context, provider, Widget? child) {
-                        return ProductCard(
-                          showActions: true,
-                          extradata: true,
-                          products: provider.manageProducts,
-                          direction: Axis.vertical,
-                          useGradient: false,
-                        );
-                      },
-                    ),
-                  ],
-                ),
-              ),
+        child: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFFF4E8DD), Color(0xFFE1DFDF)],
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
             ),
-          ],
+          ),
+          child: SafeArea(
+            child: Column(
+              children: [
+                const SizedBox(height: 20),
+                ManageCard(
+                  title: 'Manage Products',
+                  subtitle: 'You can view and edit products from here',
+                  image: 'assets/images/Group 309.png',
+                ),
+                Consumer<DashboardProvider>(
+                  builder: (BuildContext context, provider, Widget? child) {
+                    return ProductCard(
+                      showActions: true,
+                      extradata: true,
+                      products: provider.manageProducts,
+                      direction: Axis.vertical,
+                      useGradient: false,
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
         ),
       ),
       floatingActionButton: Container(

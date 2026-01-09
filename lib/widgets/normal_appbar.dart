@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../utilities/app_color.dart';
 
-class Normal_appbar extends StatelessWidget implements PreferredSizeWidget {
-  const Normal_appbar({super.key});
+class NormalAppbar extends StatelessWidget implements PreferredSizeWidget {
+  const NormalAppbar({super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);

@@ -23,44 +23,44 @@ class _SellerDashboardScreenState extends State<SellerDashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.bgcolor,
-      appBar: const CustomCurvedAppBar(),
-      body: Padding(
-        padding: const EdgeInsets.all(10),
-        child: CustomScrollView(
-           slivers: [
-             SliverToBoxAdapter(
-               child:  Column(
-                 crossAxisAlignment: CrossAxisAlignment.start,
-                 children: [
-                   OverviewBarChart(),
-                   const SizedBox(height: 20),
-                   DashboardStatsGrid(),
-                   const SizedBox(height: 20),
-                   ProductStatusPieChart(),
-                   const SizedBox(height: 20),
-                   Padding(
-                     padding: const EdgeInsets.all(15),
-                     child: Text(
-                         "Top Selling products",
-                         style:AppStyle.bold(fontSize: 18, color: AppColor.textcolor)
-                     ),
-                   ),
+       appBar: CustomCurvedAppBar(),
+       body: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child:  Padding(
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    OverviewBarChart(),
+                    const SizedBox(height: 20),
+                    DashboardStatsGrid(),
+                    const SizedBox(height: 20),
+                    ProductStatusPieChart(),
+                    const SizedBox(height: 20),
+                    Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Text(
+                          "Top Selling products",
+                          style:AppStyle.bold(fontSize: 18, color: AppColor.textcolor)
+                      ),
+                    ),
 
-                   Consumer<DashboardProvider>(
-                     builder: (BuildContext context, provider, Widget? child) {
-                       return  ProductCard(
-                         products: provider.dashboardProducts,
-                         direction: Axis.horizontal,
-                       );
-                     },
-                   ),
-                   const SizedBox(height: 20,),
-                 ],
-               ),
-             )
-           ],
-        ),
-      ),
+                    Consumer<DashboardProvider>(
+                      builder: (BuildContext context, provider, Widget? child) {
+                        return  ProductCard(
+                          products: provider.dashboardProducts,
+                          direction: Axis.horizontal,
+                        );
+                      },
+                    ),
+                    const SizedBox(height: 20,),
+                  ],
+                ),
+              ),
+            )
+          ],
+       ),
     );
   }
 }

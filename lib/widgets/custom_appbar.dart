@@ -51,22 +51,23 @@ class CustomCurvedAppBar extends StatelessWidget
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SvgPicture.asset(
-                          'assets/icons/menu-02.svg',
-                          height: 35,
-                          width: 30,
-                        ),
 
-                        // Logo
                         Row(
-                          children: [
+                           children: [
+                             SvgPicture.asset(
+                               'assets/icons/menu-02.svg',
+                               height: 35,
+                               width: 30,
+                             ),
+                            //logo
+                             const SizedBox(width: 10,),
                             Container(
                               padding: const EdgeInsets.all(8),
                               decoration: BoxDecoration(),
                               child: SvgPicture.asset(
                                 'assets/icons/Group 1.svg',
-                                height: 50,
-                                width: 50,
+                                height: 40,
+                                width: 40,
                               ),
                             ),
                              Column(
@@ -74,11 +75,15 @@ class CustomCurvedAppBar extends StatelessWidget
                               children: [
                                 Text(
                                   'SurefireHire',
-                                  style: AppStyle.semiBold(fontSize: 20, color: AppColor.bgcolor),
+                                  style: AppStyle.semiBold(fontSize: 18, color: AppColor.bgcolor),
                                 ),
                                 Text(
                                   'Equipment Rentals',
                                   style: AppStyle.semiBold(fontSize: 10, color: AppColor.bgcolor)
+                                ),
+                                Text(
+                                    'affordaable-reliable-convenient',
+                                    style: AppStyle.semiBold(fontSize: 6, color: AppColor.bgcolor)
                                 ),
                               ],
                             ),

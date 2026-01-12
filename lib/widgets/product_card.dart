@@ -24,9 +24,10 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: direction == Axis.horizontal
-          ? (extradata || showActions ? 460 : 260)
+          ? (extradata || showActions ? 460 : 280)
           : null,
           child: ListView.builder(
+            padding: const EdgeInsets.all(12),
             shrinkWrap: direction == Axis.vertical,
             physics: direction == Axis.vertical
                 ? const NeverScrollableScrollPhysics()
@@ -36,7 +37,7 @@ class ProductCard extends StatelessWidget {
             itemBuilder: (context, index) {
               final data = products[index];
               return Container(
-                width:400,
+                 width:400,
                 margin: direction ==Axis.horizontal
                   ? const EdgeInsets.only(right: 10)
                 :const EdgeInsets.all(25),
@@ -44,14 +45,14 @@ class ProductCard extends StatelessWidget {
                    gradient: useGradient ? AppColor.ProductCardGradient : null,
 
                   color: useGradient ? null : AppColor.bgcolor,
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(20),
                   border: Border.all(color: AppColor.boder),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(18),
                       child: Column(
                         children: [
                           /// ---------- HEADER ----------

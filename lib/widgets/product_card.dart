@@ -24,7 +24,7 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: direction == Axis.horizontal
-          ? (extradata || showActions ? 460 : 320)
+          ? (extradata || showActions ? 460 : 260)
           : null,
           child: ListView.builder(
             shrinkWrap: direction == Axis.vertical,
@@ -36,8 +36,10 @@ class ProductCard extends StatelessWidget {
             itemBuilder: (context, index) {
               final data = products[index];
               return Container(
-                width:340,
-                margin: const EdgeInsets.all(26),
+                width:400,
+                margin: direction ==Axis.horizontal
+                  ? const EdgeInsets.only(right: 10)
+                :const EdgeInsets.all(25),
                  decoration: BoxDecoration(
                    gradient: useGradient ? AppColor.ProductCardGradient : null,
 

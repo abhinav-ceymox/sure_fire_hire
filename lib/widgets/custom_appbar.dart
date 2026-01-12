@@ -26,7 +26,7 @@ class CustomCurvedAppBar extends StatelessWidget
               bottom: 0,
               left: 0,
               right: 0,
-              child: Container(
+               child: Container(
                 height: 30,
                 decoration: const BoxDecoration(
                   color: AppColor.bgcolor,

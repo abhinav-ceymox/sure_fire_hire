@@ -14,29 +14,13 @@ class CustomCurvedAppBar extends StatelessWidget
     final provider=context.watch<SellerProvider>();
     final data=provider.seller;
     return PreferredSize(
-      preferredSize: const Size.fromHeight(200),
+      preferredSize: const Size.fromHeight(70),
       child: Container(
         decoration:  BoxDecoration(
           gradient:AppColor.AppbarGradient,
         ),
         child: Stack(
           children: [
-            // Curved bottom shape
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-               child: Container(
-                height: 30,
-                decoration: const BoxDecoration(
-                  color: AppColor.bgcolor,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30),
-                  ),
-                ),
-              ),
-            ),
 
             // Content
             SafeArea(
@@ -108,18 +92,8 @@ class CustomCurvedAppBar extends StatelessWidget
                       ],
                     ),
 
-                    const SizedBox(height: 20),
 
-                    // User greeting
-                    Text( 'Hi, ${data.name}',
-                      style: AppStyle.bold(fontSize: 24, color: AppColor.bgcolor)
-                    ),
 
-                    const SizedBox(height: 4),
-                    Text(
-                      data.role,
-                      style: AppStyle.semiBold(fontSize: 16, color: AppColor.bgcolor)
-                    ),
                   ],
                 ),
               ),
@@ -131,5 +105,5 @@ class CustomCurvedAppBar extends StatelessWidget
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(200);
+  Size get preferredSize => const Size.fromHeight(70);
 }

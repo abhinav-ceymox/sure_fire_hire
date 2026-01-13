@@ -27,62 +27,13 @@ class _SellerDashboardScreenState extends State<SellerDashboardScreen> {
 
     return Scaffold(
       backgroundColor: AppColor.bgcolor,
-      appBar: const CustomCurvedAppBar(),
-      body: CustomScrollView(
+       body: CustomScrollView(
         slivers: [
+          const CustomCurvedSliverAppBar(),
           SliverToBoxAdapter(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                 Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: AppColor.primary,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(height: 20),
-                            Text(
-                              'Hi, ${seller.name}',
-                              style: AppStyle.bold(
-                                fontSize: 24,
-                                color: AppColor.bgcolor,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              seller.role,
-                              style: AppStyle.semiBold(
-                                fontSize: 16,
-                                color: AppColor.bgcolor,
-                              ),
-                            ),
-                            const SizedBox(height: 20),
-                          ],
-                        ),
-                      ),
-
-                       Container(
-                        height: 30,
-                        width: double.infinity,
-                        decoration: const BoxDecoration(
-                          color: AppColor.bgcolor,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(30),
-                            topRight: Radius.circular(30),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
                  Padding(
                   padding: const EdgeInsets.all(10),
                   child: Column(

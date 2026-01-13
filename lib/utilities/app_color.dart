@@ -18,5 +18,4 @@ class AppColor {
  static const LinearGradient OnboardGradient =   LinearGradient(colors: [  Color(0xFFFAE1CE),Color(0xFFFAC59F) ,],begin: Alignment.topCenter, end: Alignment.bottomCenter,);
  static const LinearGradient ActionButtonGradient =   LinearGradient(colors: [  Color(0xFFF8B582),Color(0xFFF27B21) ,],begin: Alignment.topRight, end: Alignment.bottomLeft,);
 
-
 }

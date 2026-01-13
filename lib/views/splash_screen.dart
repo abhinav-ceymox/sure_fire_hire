@@ -28,7 +28,6 @@ class _SplashScreenState extends State<SplashScreen> {
     return  Scaffold(
       body: Center(
         child: SvgPicture.asset('assets/icons/Group 4.svg',width: 100,height: 100,),
-
       ),
     );
   }

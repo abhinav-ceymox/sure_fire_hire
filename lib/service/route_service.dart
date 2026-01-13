@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:sure_fire_hire/views/home.dart';
 import 'package:sure_fire_hire/views/onboard_Screen.dart';
+import 'package:sure_fire_hire/views/selection_screen.dart';
 
 import '../views/order_manage_screen.dart';
 import '../views/product_manage.dart';
@@ -18,6 +19,11 @@ final GoRouter router = GoRouter(
       path:OnboardScreen.route ,
       name:OnboardScreen.route ,
       builder: (context, state) => const OnboardScreen(),
+    ),
+    GoRoute(
+      path:SelectionScreen.route ,
+      name:SelectionScreen.route,
+      builder: (context, state) => const SelectionScreen(),
     ),
 
     GoRoute(

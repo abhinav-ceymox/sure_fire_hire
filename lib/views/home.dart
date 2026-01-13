@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sure_fire_hire/state/seller_provider.dart';
 import 'package:sure_fire_hire/utilities/app_color.dart';
 import 'package:sure_fire_hire/utilities/text_style.dart';
 import 'package:sure_fire_hire/widgets/dashboard_stats_grid.dart';
@@ -22,9 +21,6 @@ class SellerDashboardScreen extends StatefulWidget {
 class _SellerDashboardScreenState extends State<SellerDashboardScreen> {
   @override
   Widget build(BuildContext context) {
-    final sellerProvider = context.watch<SellerProvider>();
-    final seller = sellerProvider.seller;
-
     return Scaffold(
       backgroundColor: AppColor.bgcolor,
        body: CustomScrollView(

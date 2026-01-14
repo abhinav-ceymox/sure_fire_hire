@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:sure_fire_hire/state/seller_provider.dart';
 import 'package:sure_fire_hire/utilities/text_style.dart';
+import 'package:sure_fire_hire/views/selection_screen.dart';
 import '../utilities/app_color.dart';
 
 class CustomCurvedSliverAppBar extends StatelessWidget {
@@ -21,39 +23,27 @@ class CustomCurvedSliverAppBar extends StatelessWidget {
         children: [
           Row(
             children: [
-              SvgPicture.asset(
-                'assets/icons/menu-02.svg',
-                height: 28,
-                width: 28,
-                colorFilter: const ColorFilter.mode(
-                  Colors.white,
-                  BlendMode.srcIn,
+              GestureDetector(
+                onTap: (){
+                  context.pushNamed(SelectionScreen.route);
+                },
+                child: SvgPicture.asset('assets/icons/menu-02.svg', height: 28, width: 28,
+                  colorFilter:  ColorFilter.mode(
+                    AppColor.bgcolor,
+                    BlendMode.srcIn,
+                  ),
                 ),
               ),
+
               const SizedBox(width: 8),
-              SvgPicture.asset(
-                'assets/icons/Group 1.svg',
-                height: 34,
-                width: 34,
-              ),
+              SvgPicture.asset('assets/icons/Group 1.svg', height: 34, width: 34,),
               const SizedBox(width: 6),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'SurefireHire',
-                    style: AppStyle.semiBold(
-                      fontSize: 14,
-                      color: AppColor.bgcolor,
-                    ),
-                  ),
-                  Text(
-                    'Equipment Rentals',
-                    style: AppStyle.semiBold(
-                      fontSize: 9,
-                      color: AppColor.bgcolor,
-                    ),
+                  Text('SurefireHire', style: AppStyle.semiBold(fontSize: 14, color: AppColor.bgcolor,),),
+                  Text('Equipment Rentals', style: AppStyle.semiBold(fontSize: 9, color: AppColor.bgcolor,),
                   ),
                 ],
               ),
@@ -62,21 +52,15 @@ class CustomCurvedSliverAppBar extends StatelessWidget {
           Row(
             children: [
               SvgPicture.asset(
-                'assets/icons/notification-02.svg',
-                height: 24,
-                width: 24,
-                colorFilter: const ColorFilter.mode(
-                  Colors.white,
+                'assets/icons/notification-02.svg', height: 24, width: 24, colorFilter:ColorFilter.mode(
+                 AppColor.bgcolor,
                   BlendMode.srcIn,
                 ),
               ),
               const SizedBox(width: 6),
-              SvgPicture.asset(
-                'assets/icons/more-vertical-circle-01.svg',
-                height: 22,
-                width: 22,
-                colorFilter: const ColorFilter.mode(
-                  Colors.white,
+              SvgPicture.asset('assets/icons/more-vertical-circle-01.svg', height: 22, width: 22,
+                colorFilter: ColorFilter.mode(
+                  AppColor.bgcolor,
                   BlendMode.srcIn,
                 ),
               ),
@@ -101,9 +85,7 @@ class CustomCurvedSliverAppBar extends StatelessWidget {
               right: 0,
               child: Container(
                 height: 30,
-                decoration: const BoxDecoration(
-                  color: AppColor.bgcolor,
-                  borderRadius: BorderRadius.only(
+                decoration: const BoxDecoration(color: AppColor.bgcolor, borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30),
                   ),

@@ -7,7 +7,6 @@ import 'package:sure_fire_hire/widgets/selection%20tab.dart';
 class SelectionScreen extends StatefulWidget {
   const SelectionScreen({super.key});
   static const String route = '/SelectionScreen';
-
   @override
   State<SelectionScreen> createState() => _SelectionScreenState();
 }
@@ -18,7 +17,9 @@ class _SelectionScreenState extends State<SelectionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.bgcolor,
       appBar: AppBar(
+        backgroundColor: AppColor.bgcolor,
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios_new, color: AppColor.textcolor),
